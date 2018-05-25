@@ -22,10 +22,18 @@ $(document).ready(function() {
             method: 'GET',
         }).then(function(result) {
             var useful = result.response.docs;
+            //var counter = 0;
             useful.forEach( function (doc){
                 console.log(doc.headline.main, doc.web_url, doc.byline.original, doc.pub_date);
-                //var resultdiv = $("<div>");
-
+                var attributes = [doc.headline.main, doc.web_url, doc.byline.original, doc.pub_date];
+                var resultdiv = $("<div>");
+                resultdiv.addClass("article");
+                
+                attributes.forEach( function(attribute){
+                    resultdiv.append( $("<p>").text(attribute) );
+                });
+                
+                $("#results").append(resultdiv);
             });
         });
 
