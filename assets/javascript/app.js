@@ -8,6 +8,7 @@ $(document).ready(function() {
         var begin = $("#startYear").val();
         var end = $("#endYear").val();
 
+
         var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
         url += '?' + $.param({
             'api-key': "ec9386b2270d431591c608dd2e1d96e9",
@@ -24,8 +25,8 @@ $(document).ready(function() {
             var useful = result.response.docs;
             //var counter = 0;
             useful.forEach( function (doc){
-                console.log(doc.headline.main, doc.web_url, doc.byline.original, doc.pub_date);
-                var attributes = [doc.headline.main, doc.web_url, doc.byline.original, doc.pub_date];
+                //console.log(doc.headline.main, doc.web_url, doc.byline.original, doc.pub_date);
+                var attributes = [doc.headline.main, doc.web_url, doc.byline.original, doc.pub_date.split("T")[0]];
                 var resultdiv = $("<div>");
                 resultdiv.addClass("article");
                 
@@ -39,8 +40,8 @@ $(document).ready(function() {
 
     });
 
-    $("#clearButton").on("click", function (){
-
+    $("#clear").on("click", function (){
+    
     });
 
 
