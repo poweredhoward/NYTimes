@@ -1,12 +1,12 @@
 $(document).ready(function() {
 
-   function convertDate()
 
-    $("#searchButton").on("click", function(){
-        var query = $("#query").val();
-        var quantity = $("#quantity").val();
-        var begin = $("#start").val();
-        var end = $("#end").val();
+    $("#submit").on("click", function(event){
+        event.preventDefault();
+        var query = $("#searchInput").val();
+        var quantity = $("#recordNum").val();
+        var begin = $("#startYear").val();
+        var end = $("#endYear").val();
 
         var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
         url += '?' + $.param({
@@ -23,8 +23,8 @@ $(document).ready(function() {
         }).then(function(result) {
             var useful = result.response.docs;
             useful.forEach( function (doc){
-                console.log(useful[0].headline.main, useful[0].web_url, useful[0].byline.original, useful[0].pub_date);
-                var resultdiv = $("<div>");
+                console.log(doc.headline.main, doc.web_url, doc.byline.original, doc.pub_date);
+                //var resultdiv = $("<div>");
 
             });
         });
