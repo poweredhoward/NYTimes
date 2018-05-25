@@ -25,7 +25,7 @@ $(document).ready(function() {
             var useful = result.response.docs;
             //var counter = 0;
             useful.forEach( function (doc){
-                //console.log(doc.headline.main, doc.web_url, doc.byline.original, doc.pub_date);
+                console.log(doc.headline.main, doc.web_url, doc.byline.original, doc.pub_date);
                 var attributes = [doc.headline.main, doc.web_url, doc.byline.original, doc.pub_date.split("T")[0]];
                 var resultdiv = $("<div>");
                 resultdiv.addClass("article");
