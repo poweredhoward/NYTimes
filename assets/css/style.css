@@ -1,20 +1,30 @@
 body {
     background-image: url("../images/newspaper_background.jpg");
     background-repeat: no-repeat;
-    background-position: right top;
-    background-color: lemonchiffon;
+    background-attachment: fixed;
 }
 
 #jumbo {
     background-color: rebeccapurple;
     border-radius: 15px;
     font-family: 'Fredoka One', cursive;
+    margin-top: 40px;
+
+}
+.fas { 
+    color: white;
+    border: 5px;
+    border-color: black;
 }
 .display-4 {
     text-align: center;
 
 }
+.card { 
+
+}
 .form-group {
     padding: 20px;
+
 
 }
